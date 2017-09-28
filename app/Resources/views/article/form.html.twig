@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="/assets/js/article.js"></script>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Create a new article</h1>
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.title) }}
+            {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.author) }}
+            {{ form_widget(form.author, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.body) }}
+            {{ form_widget(form.body, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.publishedAt) }}
+            {{ form_widget(form.publishedAt, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.tags) }}
+            {{ form_widget(form.tags, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" >Save</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

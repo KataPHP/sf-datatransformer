@@ -1,0 +1,15 @@
+version: "3.1"
+
+services:
+  db:
+    image: mysql
+    environment:
+        MYSQL_DATABASE: "symfony"
+        MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+    ports:
+        - 3309:3306
+
+  adminer:
+    image: adminer
+    ports:
+        - 9002:8080
